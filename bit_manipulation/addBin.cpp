@@ -9,8 +9,13 @@
 
 std::string addBinary( const std::string & str1, const std::string & str2 )
 {
-    std::string s1 = ( str1.length() > str2.length() ? str1 : str2 );
-    std::string s2 = ( str1.length() > str2.length() ? str2 : str1 );
+    std::string s1, s2; 
+    if ( str1.length() >= str2.length()) {
+        s1 = str1; s2 = str2;
+    }
+    else {
+        s1 = str2; s2 = str1;
+    }
     int diff = s1.length() - s2.length();
     std::stringstream ss;
     while(diff) {
