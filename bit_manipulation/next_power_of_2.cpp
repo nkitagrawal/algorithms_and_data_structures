@@ -8,10 +8,15 @@ int next_power_of_2( int num ) {
   if (num && !(num & (num-1))) {
     return num;
   }
+  
+//Properties of Power of 2:
+//It has only 1 set bit. Ex: 2(10), 4(100), 8(1000), 16(10000)
+//And at each iteration that set bit shifts to the left by 1.
+  
   //count till msb set bit
   int count = 0;
   while ( num != 0 ) {
-    num >>= 1;
+    num >>= 1;    //Count the position of last set bit and add 1 to it for the next power of 2.
     count++;
   }
   return (1 << count);
