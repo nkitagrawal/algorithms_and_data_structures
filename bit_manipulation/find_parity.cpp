@@ -10,7 +10,7 @@
 bool getparity( int num )
 {
   bool parity = false;
-  while( num ) {
+  while( num ) {      //This loop will only run for # of set bits.
     parity = !parity;
     num = (num & (num - 1));
   }
