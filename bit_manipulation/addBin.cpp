@@ -25,7 +25,7 @@ std::string addBinary( const std::string & str1, const std::string & str2 )
     s2 = ss.str() + s2;
     std::cout << s1 << std::endl;
     std::cout << s2 << std::endl;
-    ss.str(std::string());
+    ss.str(std::string());      //Emptying the ss stream
     int i = s1.length() - 1;
     int carry = 0;
     while ( i >= 0 ) {
