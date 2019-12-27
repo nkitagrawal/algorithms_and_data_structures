@@ -3,7 +3,7 @@
  * Basic way of doing is : if sum of digits of number is multiple of 3,
  * number is divisible by 3.
  *
- * However another efficient way of doing it is:
+ * However another efficient way of doing it is:            30(11110)=2-2=0; 39(100111)=2-2=0; 999(1111100111)=4-4=0
  * Count the number of set bits at even positions.
  * Count the number of set bits at odd positions.
  * if difference is multiple of 3, number will be multiple of 3.
