@@ -6,7 +6,7 @@
 
 bool powerOfTwo( int n )
 {
-    return  (n > 0 && !( n & ( n - 1 ) ));
+    return  (n > 0 && !( n & ( n - 1 ) ));          //10, 100, 1000, 10000
 }
 
 int main()
