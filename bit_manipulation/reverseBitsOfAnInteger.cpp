@@ -21,7 +21,7 @@ unsigned int swapBits(unsigned int x, unsigned int i, unsigned int j)
   unsigned int r = ((x >> j) & 1);
   if ( l ^ r )
   {
-    x ^= ((1U << i) | (1U << j));
+    x ^= ((1U << i) | (1U << j));   //To toggle a bit, XOR it with bit 1. Here 1U is unsigned number 1.
   }
   return x;
 }
@@ -35,7 +35,7 @@ unsigned int reverseBits1(int n)
 {
   unsigned bitCount = sizeof(n) * 8;
   for( unsigned int i = 0; i < bitCount/2; ++i) {
-    n = swapBits(n, i, bitCount-i-1);
+    n = swapBits(n, i, bitCount-1-i);
   }
   return n;
 }
@@ -136,9 +136,9 @@ unsigned int reverseBits1(int n)
 unsigned int reverseBits2( unsigned int num )
 {
   assert(sizeof(num) == 4); // this method will work only for 32 bits
-  num = ((num & 0x55555555) << 1)  |  ((num & 0xAAAAAAAA) >> 1);
-  num = ((num & 0x33333333) << 2)  |  ((num & 0xCCCCCCCC) >> 2);
-  num = ((num & 0x0F0F0F0F) << 4)  |  ((num & 0xF0F0F0F0) >> 4);
+  num = ((num & 0x55555555) << 1)  |  ((num & 0xAAAAAAAA) >> 1);    //Alternate bits are set in both: 5(0101), A(1010)
+  num = ((num & 0x33333333) << 2)  |  ((num & 0xCCCCCCCC) >> 2);    //3(0011), C(1100)
+  num = ((num & 0x0F0F0F0F) << 4)  |  ((num & 0xF0F0F0F0) >> 4);    //F(1111)
   num = ((num & 0x00FF00FF) << 8)  |  ((num & 0xFF00FF00) >> 8);
   num = ((num & 0x0000FFFF) << 16) |  ((num & 0xFFFF0000) >> 16);
   return num;
